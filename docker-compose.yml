@@ -5,6 +5,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-#    image: elijahahianyo/trade-project:trade-engine-prod
+    image: client-connectivity-prod
     ports:
       - 25000:25000
