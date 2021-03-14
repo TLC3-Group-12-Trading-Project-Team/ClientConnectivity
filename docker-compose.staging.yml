@@ -1,0 +1,7 @@
+version: '2'
+services:
+  client-connectivity-prod:
+    container_name: client-connectivity-prod
+    image: elijahahianyo/trade-project:client-connectivity-prod
+    ports:
+      - 25000:25000

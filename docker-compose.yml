@@ -1,0 +1,10 @@
+version: '2'
+services:
+  client-connectivity-prod:
+    container_name: client-connectivity-prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+#    image: elijahahianyo/trade-project:trade-engine-prod
+    ports:
+      - 25000:25000
