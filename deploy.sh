@@ -8,5 +8,3 @@ ssh -o StrictHostKeyChecking=no ubuntu@$EC2_PUBLIC_IP_ADDRESS << 'ENDSSH'
   docker pull elijahahianyo/trade-project:client-connectivity-prod
   docker-compose -f docker-compose.staging.yml  up -d
 ENDSSH
-
-
