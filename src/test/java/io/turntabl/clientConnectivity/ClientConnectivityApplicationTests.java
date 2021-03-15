@@ -1,4 +1,4 @@
-package com.example.clientConnectivity;
+package io.turntabl.clientConnectivity;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
