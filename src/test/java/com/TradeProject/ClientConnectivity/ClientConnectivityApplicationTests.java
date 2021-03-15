@@ -1,4 +1,4 @@
-package io.turntabl.clientConnectivity;
+package com.TradeProject.ClientConnectivity;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
