@@ -5,3 +5,9 @@ services:
     image: elijahahianyo/trade-project:client-connectivity-prod
     ports:
       - 25000:25000
+    networks:
+      - trade_project
+
+networks:
+  trade_project:
+#    driver: bridge
