@@ -54,12 +54,14 @@ public class ClientService {
         if(clientByEmail.isPresent()){
             response.setCode(HttpStatus.BAD_REQUEST.value());
             response.setStatus("Email is already taken");
+            HttpStatus.BAD_REQUEST.value();
             throw new IllegalStateException("Email already Taken");
         }
         this.clientRepository.save(client);
 
-        response.setCode(HttpStatus.BAD_REQUEST.value());
+        response.setCode(HttpStatus.OK.value());
         response.setStatus("Created Successfully");
+        HttpStatus.OK.value();
 
         return response;
     }
@@ -67,9 +69,13 @@ public class ClientService {
     //getting a single client by id
     public Client getClient(Long clientId) {
         if(!this.clientRepository.existsById(clientId)){
+            HttpStatus.BAD_REQUEST.value();
             throw new IllegalStateException("client with id "+ clientId + " does not exist");
+
         }
+        HttpStatus.OK.value();
         return this.clientRepository.findById(clientId).orElse(null);
+
     }
 
     //login for the client
@@ -79,16 +85,19 @@ public class ClientService {
             String password = cl.getPassword();
             if(encoder.matches(client.getPassword(), password)){
                 response.setCode(HttpStatus.OK.value());
+                HttpStatus.OK.value();
                 response.setStatus("Success");
                 cl.setPassword("");
                 response.setData(cl);
             }else{
                 response.setCode(HttpStatus.BAD_REQUEST.value());
                 response.setStatus("Login Failed");
+                HttpStatus.BAD_REQUEST.value();
             }
         }else{
             response.setCode(HttpStatus.UNAUTHORIZED.value());
             response.setStatus("Unauthorized Failed");
+            HttpStatus.UNAUTHORIZED.value();
         }
         return response;
     }
