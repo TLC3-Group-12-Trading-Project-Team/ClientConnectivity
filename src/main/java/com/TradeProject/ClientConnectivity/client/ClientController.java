@@ -31,8 +31,8 @@ public class ClientController {
     }
 
     @GetMapping(path = "{clientId}")
-    public Client getClientById(@RequestParam Long clientid){
-        return this.clientService.getClient(clientid);
+    public Client getClientById(@PathVariable("clientId") Long clientId){
+        return this.clientService.getClient(clientId);
     }
 
 }
