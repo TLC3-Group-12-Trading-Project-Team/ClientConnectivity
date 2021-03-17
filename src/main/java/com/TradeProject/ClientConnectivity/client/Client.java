@@ -43,12 +43,17 @@ public class Client {
             nullable = false
     )
     private String lastname;
+    @Column(
+            nullable = false
+    )
+    private double balance;
 
-    public Client(String email, String password, String firstname, String lastname) {
+    public Client(String email, String password, String firstname, String lastname, double balance) {
         this.email = email;
         this.password = password;
         this.firstname = firstname;
         this.lastname = lastname;
+        this.balance = balance;
     }
 }
 
