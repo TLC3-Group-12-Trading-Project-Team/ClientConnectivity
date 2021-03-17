@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "client")
+@RequestMapping(path = "clients")
 public class ClientController {
     private final ClientService clientService;
 
